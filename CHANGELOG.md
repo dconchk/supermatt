@@ -8,10 +8,13 @@ All notable changes to this project are documented here. The format follows [Kee
 
 - `codebase-design`: defines data contracts, state transitions, validation ownership, concurrent writes, and recovery after duplicate or interrupted execution in a focused reference.
 - `implement`: consults the shared state-contract guidance before changing data contracts, state transitions, shared mutable state, or retryable effects.
-- `implement-spec`: gives each worker the same conditional state-contract check as `implement`.
+- `implement-spec`: starts a fresh worker context for each ticket and gives each worker the same conditional state-contract check as `implement`.
 - `code-review`: checks duplicate execution and interruption between durable effects against the intended recovery contract. Requires verified test stores and endpoints before replay, otherwise reports a verification gap.
 - `ask-supermatt`: maps implementation flows to the shared state-contract guidance and recovery review, and describes verified examples before mechanical sweeps.
 - `refactor`: verifies complete, runnable manual examples against automation in scratch before applying a mechanical sweep, including coupled declarations and callers.
+- `diagnosing-bugs`: checks for the same proven defect at other sites and reruns the original reproduction after all confirmed in-scope fixes.
+- `to-tickets`: links GitHub tickets to their GitHub parent as native sub-issues and preserves the parent reference in each ticket body.
+- `setup-supermatt-skills`: documents how to attach existing GitHub tickets and verify the link before retrying.
 
 ### Fixed
 
